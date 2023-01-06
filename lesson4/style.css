@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ font-family: consolas;
+ }
+ 
+ body{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     background: #333;
+     display: grid;
+     place-items: center;
+ }
+
+.card{
+    position: relative;
+    width: 200px;
+    height: 250px;
+    background-color: rgb(10, 10, 10);
+    box-shadow: 0px 0px 5px 2px #000;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-280deg);
+    width: 160%;
+    height: 130%;
+    background-image: conic-gradient(#ff00bb 0deg, #ff00bb 90deg, transparent 130deg, transparent 180deg, #4330FF 180deg,#4530FF 270deg, transparent 310deg, transparent 360deg);
+    transition: 2s;
+}
+
+.card:hover::before{
+    transform: translate(-50%, -50%) rotate(-100deg);
+
+}
+
+.card:hover::after{
+    content: '  Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, deserunt ';
+    text-align: center;
+    color: #ddd;
+    position: absolute;
+    background-color: #000;
+    display: flex;
+    font-size: 17px;
+    align-items: center;
+    justify-content: center;
+    height: 242px;
+    width: 192px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
